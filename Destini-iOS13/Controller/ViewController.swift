@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var storyLabel: UILabel!
+    @IBOutlet var choiceButton1: UIButton!
+    @IBOutlet var choiceButton2: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
