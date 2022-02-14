@@ -22,11 +22,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyLabel.text = stories[0].title
-        choiceButton1.setTitle(stories[0].choice1, for: .normal)
-        choiceButton2.setTitle(stories[0].choice2, for: .normal)
+        updateUI(storyIndex: 0)
     }
 
-
+    
+    @IBAction func choiceMade(_ sender: UIButton) {
+        if sender.tag == 0 {
+            updateUI(storyIndex: 1)
+        } else {
+            updateUI(storyIndex: 2)
+        }
+    }
+    
+    func updateUI(storyIndex: Int) {
+        storyLabel.text = stories[storyIndex].title
+        choiceButton1.setTitle(stories[storyIndex].choice1, for: .normal)
+        choiceButton2.setTitle(stories[storyIndex].choice2, for: .normal)
+    }
 }
 
